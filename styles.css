@@ -1,0 +1,44 @@
+body { font-family: 'Roboto', sans-serif; color: #333; transition: background 0.3s, color 0.3s; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" fill="#007bff"/></svg>'), auto; }
+body[data-bs-theme="dark"] { background: #121212; color: #fff; }
+.bg-primary { background-color: #007bff !important; }
+.hero { height: 90vh; background-size: cover; background-attachment: fixed; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(0,123,255,0.3), rgba(108,117,125,0.3)); }
+.parallax { background-attachment: fixed; }
+.logo, .hero-logo { max-height: 120px; transition: transform 0.3s; }
+.logo:hover { transform: scale(1.1); }
+.bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.glass-card { backdrop-filter: blur(10px); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 15px; padding: 20px; transition: box-shadow 0.3s; }
+.glass-card:hover { box-shadow: 0 0 20px rgba(0,123,255,0.5); }
+.holographic-card { position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+.holographic-card:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); }
+.holographic-card::before { content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(0,255,255,0), rgba(0,255,255,0.5)); opacity: 0; transition: opacity 0.3s, top 0.3s; }
+.holographic-card:hover::before { opacity: 1; top: 0; }
+.liquid-morph-element { background: #007bff; border-radius: 50px; padding: 1em 2em; color: white; position: relative; overflow: hidden; transition: border-radius 0.3s, transform 0.3s; }
+.liquid-morph-element:hover { border-radius: 10px; transform: rotate(5deg); }
+.liquid-morph-element::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: conic-gradient(cyan, #007bff); opacity: 0; transition: opacity 0.3s; }
+.liquid-morph-element:hover::before { opacity: 1; }
+.frame-img { outline: 0 solid #007bff; outline-offset: -10px; transition: outline-width 0.3s, outline-offset 0.3s, filter 0.3s; }
+.frame-img:hover { outline-width: 5px; outline-offset: 0; filter: brightness(1.2); }
+.whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: #25D366; border-radius: 50%; padding: 10px; z-index: 1000; transition: transform 0.3s; }
+.whatsapp-btn:hover { transform: scale(1.1); }
+img { loading: lazy; }
+.timeline { position: relative; max-width: 1200px; margin: 0 auto; }
+.timeline::after { content: ''; position: absolute; width: 6px; background-color: #007bff; top: 0; bottom: 0; left: 50%; margin-left: -3px; }
+.timeline-item { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
+.timeline-item:nth-child(odd) { left: 0; }
+.timeline-item:nth-child(even) { left: 50%; }
+.timeline-year { position: absolute; width: 50px; height: 50px; background: #007bff; border-radius: 50%; color: white; text-align: center; line-height: 50px; top: 20px; }
+.timeline-item:nth-child(odd) .timeline-year { right: -25px; }
+.timeline-item:nth-child(even) .timeline-year { left: -25px; }
+.timeline-content { padding: 20px 30px; background: white; position: relative; border-radius: 6px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+.timeline-img { margin-top: 10px; border-radius: 5px; }
+.gallery img { margin-bottom: 20px; transition: transform 0.3s; }
+.gallery img:hover { transform: scale(1.05); }
+.text-muted { color: #6c757d !important; }
+/* Existing styles + fixes for responsiveness */
+@media (max-width: 768px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .hero { height: 60vh; }
+}
+/* Add high-contrast for accessibility */
+a:focus, button:focus { outline: 2px solid #007bff; }
